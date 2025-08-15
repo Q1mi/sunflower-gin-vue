@@ -1,0 +1,39 @@
+server:
+  name: "appname"
+  mode: "dev"
+  port: 8000
+  version: "v0.0.1"
+
+snowflake:
+  start_time: "2025-07-01"
+  machine_id: 1
+
+jwt:
+  access_secret: "夏天夏天悄悄过去留下小秘密"
+  refresh_secret: "压心底压心底不能告诉你"
+  access_expire_seconds: 3600
+  refresh_expire_seconds: 86400
+
+log:
+  level: "info"
+  filename: "log/server.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+
+mysql:
+  host: 127.0.0.1
+  port: 13306
+  user: "root"
+  password: "root1234"
+  dbname: "db6"
+  max_open_conns: 200
+  max_idle_conns: 50
+  max_lifetime: 1h 
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password: ""
+  db: 0
+  pool_size: 10
