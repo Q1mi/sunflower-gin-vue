@@ -5,7 +5,7 @@
 ## 目录结构
 
 ```
-├─api.json                  // 接口文档
+├─api.yaml                  // 接口文档
 ├─sunflower-gin             // 后端代码
 ├─frontend                  // 前端代码
 └─README.md                 // 项目说明文件
