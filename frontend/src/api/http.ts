@@ -69,10 +69,12 @@ class HttpClient {
         }
 
         // 请求日志
-        console.log(
-          `[HTTP Request] ${config.method?.toUpperCase()} ${config.url}`,
-          config.data || config.params,
-        )
+        if (API_CONFIG.ENABLE_REQUEST_LOG) {
+          console.log(
+            `[HTTP Request] ${config.method?.toUpperCase()} ${config.url}`,
+            config.data || config.params,
+          )
+        }
 
         return config
       },
@@ -90,7 +92,9 @@ class HttpClient {
     this.instance.interceptors.response.use(
       (response: AxiosResponse) => {
         // 响应日志
-        console.log(`[HTTP Response] ${response.status} ${response.config.url}`, response.data)
+        if (API_CONFIG.ENABLE_REQUEST_LOG) {
+          console.log(`[HTTP Response] ${response.status} ${response.config.url}`, response.data)
+        }
 
         const apiResponse: HttpApiResponse = response.data
 

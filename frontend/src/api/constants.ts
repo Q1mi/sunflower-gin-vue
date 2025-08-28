@@ -5,10 +5,12 @@
 
 /** API基础配置 */
 export const API_CONFIG = {
-  /** 基础URL */
-  BASE_URL: 'http://127.0.0.1:8000/api/v1',
-  /** 请求超时时间 */
-  TIMEOUT: 10000,
+  /** 基础URL - 从环境变量读取 */
+  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api/v1',
+  /** 请求超时时间 - 从环境变量读取 */
+  TIMEOUT: Number(import.meta.env.VITE_API_TIMEOUT) || 10000,
+  /** 是否启用请求日志 - 从环境变量读取 */
+  ENABLE_REQUEST_LOG: import.meta.env.VITE_ENABLE_REQUEST_LOG === 'true',
   /** 默认请求头 */
   DEFAULT_HEADERS: {
     'Content-Type': 'application/json',
